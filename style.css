@@ -1,0 +1,493 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.main {
+  max-width: 100%;
+  position: relative;
+  background-color: #fae3f6;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.nav {
+  position: relative;
+  padding: 25px;
+  background-color: #ecbee5;
+}
+.nav__logo .logo {
+  font-weight: 400;
+  font-size: 45px;
+  font-family: "Roboto Serif", serif;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav__menu li {
+  text-decoration: none;
+  font-size: 20px;
+}
+.nav__menu .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.nav__menu a {
+  color: rgb(35, 96, 149);
+  text-decoration: none;
+}
+.nav__menu .icon-btn {
+  background: transparent;
+}
+.nav__menu .input-btn {
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #19388c;
+  border-radius: 5px;
+  margin: 0 auto;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.cards {
+  max-width: 1340px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-basis: 32%;
+  padding: 15px;
+  flex-grow: 0.8;
+}
+.card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.card__img {
+  display: flex;
+  justify-content: center;
+}
+.card__title {
+  min-height: 2em;
+  font-size: 18px;
+  font-family: "Roboto Serif", serif;
+}
+.card__price {
+  color: #fff;
+  text-align: center;
+  background-color: rgba(25, 56, 140, 0.8);
+  font-size: 18px;
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+}
+.card__description {
+  font-size: 18px;
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+}
+.card__button {
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #19388c;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+  cursor: pointer;
+  font-family: "Roboto Serif", serif;
+}
+
+.title {
+  text-align: center;
+  color: #19388c;
+  font-weight: 500;
+  font-size: 45px;
+  font-family: "Roboto Serif", serif;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes myAnim-after {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+.popup-window {
+  display: none;
+  width: 500px;
+  height: 300px;
+  font-size: 20px;
+  border-radius: 15%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background: url(./images/ornchristmas.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+.popup-window__close {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+}
+.popup-window__text {
+  position: absolute;
+  top: 35px;
+  left: 15px;
+}
+.popup-window__text h3 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 45px;
+  font-family: "Roboto Serif", serif;
+}
+.popup-window__box {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+}
+.popup-window__candle {
+  position: absolute;
+  bottom: 1px;
+  right: 80px;
+}
+
+.input {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  width: 500px;
+}
+.input__search {
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  width: 100%;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #7690D6;
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 0 5px #C1D9BF, 0 0 0 10px rgba(245, 245, 245, 0.9215686275);
+  transition: 0.3s ease;
+}
+
+.cart {
+  display: none;
+  min-width: 50%;
+  height: 70%;
+  background-color: #ecbee5;
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  z-index: 1000;
+  border: 2px solid #e7a8de;
+  padding: 25px;
+}
+.cart__close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  transition: transform 1s;
+}
+
+.cart__close:hover {
+  cursor: pointer;
+}
+
+.cart__container {
+  position: relative;
+}
+
+.cart__product {
+  position: relative;
+  margin: 5px;
+  border: 1px solid white;
+  display: flex;
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}
+
+.cart__product-remove {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  width: 100px;
+  height: 40px;
+  background-color: #7690D6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart__product-remove:hover {
+  cursor: pointer;
+  background-color: #7690D6;
+}
+
+.cart__product-photo {
+  max-width: 200px;
+}
+
+.cart__product-photo img {
+  object-fit: cover;
+}
+
+.cart__product-title {
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+  padding: 10px;
+  padding-top: 0;
+  max-width: 85%;
+}
+
+.cart__product-price {
+  padding: 10px;
+}
+
+.cart__product-actions {
+  padding: 10px;
+  display: flex;
+}
+
+.cart__product-actions button {
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  font-size: 20px;
+  background-color: #7690D6;
+}
+
+.cart__product-actions button:hover {
+  cursor: pointer;
+  background-color: #7690D6;
+}
+
+.cart__product-actions input {
+  color: #fff;
+  background-color: #6d8a6b;
+  text-align: center;
+  min-width: 25px;
+  max-width: 2em;
+  font-size: 24px;
+}
+
+.cart__product-summary {
+  position: absolute;
+  bottom: 23px;
+  right: 25px;
+  padding: 10px;
+  color: #19388c;
+  text-align: right;
+}
+
+.cart__phone {
+  font-family: "Roboto Serif", serif;
+  color: #6d8a6b;
+  font-size: 22px;
+}
+
+.cart__fone-input {
+  font-size: 20px;
+  background-color: #6d8a6b;
+  color: #fff;
+  padding: 10px;
+}
+
+.cart__summary {
+  color: #6d8a6b;
+  width: 65%;
+  font-size: 24px;
+  text-align: right;
+}
+
+.cart__buy-button:hover {
+  cursor: pointer;
+  background-color: #7690D6;
+}
+
+.cart__buy-button {
+  color: #fff;
+  padding: 10px;
+  width: 240px;
+  height: 48px;
+  display: block;
+  font-size: 20px;
+  background-color: #19388c;
+}
+
+.cart.open {
+  display: block;
+  overflow: auto;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+.cart__title.WithProduct {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  color: #19388c;
+  padding: 10px 0px;
+}
+
+.cart__title {
+  display: none;
+}
+
+.cart__message.WithProduct {
+  display: none;
+}
+
+.cart__message {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  color: #19388c;
+  padding: 10px;
+}
+
+.cart__bottom {
+  display: none;
+}
+
+.cart__bottom.WithProduct {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: flex-end;
+  margin-top: 50px;
+  bottom: -150px;
+  gap: 10px;
+  right: 25px;
+}
+
+.cart-count {
+  cursor: pointer;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(25, 56, 140, 0.8);
+  color: #e662c9;
+  top: 24px;
+  right: 16px;
+}
